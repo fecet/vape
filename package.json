@@ -1,0 +1,19 @@
+{
+  "name": "vape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {},
+  "dependencies": {
+    "ccstatusline": "^1.2.0",
+    "@anthropic-ai/claude-code": "^1.0.81",
+    "claude-code-templates": "^1.19.0"
+  }
+}
