@@ -6,6 +6,9 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+set-claude = "ln -sf $PIXI_PROJECT_ROOT/conf/.claude/settings.json ~/.claude/settings.json"
+set-ccstatusline = "ln -sf $PIXI_PROJECT_ROOT/conf/ccstatusline/settings.json ~/.config/ccstatusline/settings.json"
+init.depends-on = ["set-claude", "set-ccstatusline"]
 
 [dependencies]
 pnpm = "*"

@@ -1,0 +1,71 @@
+{
+  "lines": [
+    [
+      {
+        "id": "1",
+        "type": "model",
+        "color": "cyan"
+      },
+      {
+        "id": "2",
+        "type": "separator"
+      },
+      {
+        "id": "3",
+        "type": "context-length",
+        "color": "gray"
+      },
+      {
+        "id": "4",
+        "type": "separator"
+      },
+      {
+        "id": "5",
+        "type": "git-branch",
+        "color": "magenta"
+      },
+      {
+        "id": "6",
+        "type": "separator"
+      },
+      {
+        "id": "7",
+        "type": "git-changes",
+        "color": "yellow"
+      }
+    ],
+    [
+      {
+        "id": "1755229925445",
+        "type": "tokens-input"
+      },
+      {
+        "id": "1755238122723",
+        "type": "separator"
+      },
+      {
+        "id": "1755238123701",
+        "type": "tokens-output"
+      },
+      {
+        "id": "1755238126086",
+        "type": "separator"
+      },
+      {
+        "id": "1755238126806",
+        "type": "tokens-total"
+      },
+      {
+        "id": "1755238152418",
+        "type": "separator"
+      },
+      {
+        "id": "1755238129598",
+        "type": "tokens-cached"
+      }
+    ],
+    []
+  ],
+  "flexMode": "full-minus-40",
+  "compactThreshold": 60
+}
