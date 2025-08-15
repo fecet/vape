@@ -3,7 +3,7 @@
     [
       {
         "id": "1",
-        "type": "model",
+        "type": "version",
         "color": "cyan"
       },
       {
@@ -64,7 +64,13 @@
         "type": "tokens-cached"
       }
     ],
-    []
+    [
+      {
+        "id": "1755238792613",
+        "type": "custom-command",
+        "commandPath": "ccusage statusline"
+      }
+    ]
   ],
   "flexMode": "full-minus-40",
   "compactThreshold": 60

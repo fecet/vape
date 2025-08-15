@@ -14,6 +14,9 @@ importers:
       ccstatusline:
         specifier: ^1.2.0
         version: 1.2.0
+      ccusage:
+        specifier: ^15.9.5
+        version: 15.9.5
       claude-code-templates:
         specifier: ^1.19.0
         version: 1.19.0
@@ -165,6 +168,11 @@ packages:
   ccstatusline@1.2.0:
     resolution: {integrity: sha512-gcphLGAXdZRiY7IoNF39kl+fJ8cWAhU+JCI3Tp8vd/LaSVT7iRblrxR6iwxIk6kImdFoi/O7gctBLoL2JaPZvw==}
     engines: {node: '>=14.0.0'}
+    hasBin: true
+
+  ccusage@15.9.5:
+    resolution: {integrity: sha512-qovG9S4rP24w70PanPDE32cTrc1UACgqJiDEMsJZVOvMqn8wKxM+DSQOu2EsvXSeEtbntacOQFhpEPECduZaMQ==}
+    engines: {node: '>=20.19.4'}
     hasBin: true
 
   chalk@4.1.2:
@@ -826,6 +834,8 @@ snapshots:
   camelcase@6.3.0: {}
 
   ccstatusline@1.2.0: {}
+
+  ccusage@15.9.5: {}
 
   chalk@4.1.2:
     dependencies:

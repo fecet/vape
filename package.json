@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.14.0",
-  "devDependencies": {},
   "dependencies": {
-    "ccstatusline": "^1.2.0",
     "@anthropic-ai/claude-code": "^1.0.81",
+    "ccstatusline": "^1.2.0",
+    "ccusage": "^15.9.5",
     "claude-code-templates": "^1.19.0"
   }
 }
