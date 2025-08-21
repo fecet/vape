@@ -11,9 +11,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.14.0",
   "dependencies": {
-    "@anthropic-ai/claude-code": "^1.0.81",
-    "ccstatusline": "^1.2.0",
-    "ccusage": "^15.9.5",
-    "claude-code-templates": "^1.19.0"
+    "ccexp": "^4.0.0",
+    "tweakcc": "^1.0.3"
+  },
+  "devDependencies": {
+    "@anthropic-ai/claude-code": "^1.0.86"
   }
 }

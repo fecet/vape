@@ -1,77 +1,92 @@
 {
+  "version": 3,
   "lines": [
     [
       {
-        "id": "1",
+        "id": "8753f457-715b-46b0-8864-64bdd05ac65d",
         "type": "version",
         "color": "cyan"
       },
       {
-        "id": "2",
+        "id": "04635f52-eb3a-4662-84fe-beceb7cb3918",
         "type": "separator"
       },
       {
-        "id": "3",
+        "id": "29a12c18-335a-4281-87fb-4220e70535fa",
         "type": "context-length",
         "color": "gray"
       },
       {
-        "id": "4",
+        "id": "7dcaab99-be88-4635-8410-9cf8bb0b3209",
         "type": "separator"
       },
       {
-        "id": "5",
+        "id": "91bcb206-af46-4d41-84be-ba38f16b0a09",
         "type": "git-branch",
         "color": "magenta"
       },
       {
-        "id": "6",
+        "id": "9cbc804d-ac3b-420e-9066-4c9e6cabfbb0",
         "type": "separator"
       },
       {
-        "id": "7",
+        "id": "3a7464de-e86a-4aff-a9ce-41a9958c29ba",
         "type": "git-changes",
         "color": "yellow"
       }
     ],
     [
       {
-        "id": "1755229925445",
+        "id": "14a22d02-4581-4612-8177-b7be3b721ee8",
         "type": "tokens-input"
       },
       {
-        "id": "1755238122723",
+        "id": "025e9d3b-1560-4783-bc7b-4b0b5ce593ae",
         "type": "separator"
       },
       {
-        "id": "1755238123701",
+        "id": "4942ecb7-7015-4dc9-a975-8c04dd224696",
         "type": "tokens-output"
       },
       {
-        "id": "1755238126086",
+        "id": "dd5a86a2-9690-4d2f-b403-e893893206c1",
         "type": "separator"
       },
       {
-        "id": "1755238126806",
+        "id": "36de979c-fa75-4a15-82f3-e731fef0449b",
         "type": "tokens-total"
       },
       {
-        "id": "1755238152418",
+        "id": "2359258c-5898-4676-a86f-235f7a118478",
         "type": "separator"
       },
       {
-        "id": "1755238129598",
+        "id": "3dfa562e-5a92-42b9-ab6a-557c291c36fd",
         "type": "tokens-cached"
       }
     ],
     [
       {
-        "id": "1755238792613",
+        "id": "d7310ac8-90bc-4591-b462-9fad4d31d62f",
         "type": "custom-command",
         "commandPath": "ccusage statusline"
       }
     ]
   ],
   "flexMode": "full-minus-40",
-  "compactThreshold": 60
+  "compactThreshold": 60,
+  "colorLevel": 2,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "powerline": {
+    "enabled": false,
+    "separators": [
+      ""
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [],
+    "endCaps": []
+  }
 }

@@ -8,11 +8,27 @@ version = "0.1.0"
 [tasks]
 set-claude = "ln -sf $PIXI_PROJECT_ROOT/conf/.claude/settings.json ~/.claude/settings.json"
 set-ccstatusline = "ln -sf $PIXI_PROJECT_ROOT/conf/ccstatusline/settings.json ~/.config/ccstatusline/settings.json"
-set-cc-env = '''claude config set --global env "{\"PATH\": \"$PIXI_PROJECT_ROOT/node_modules/.bin:\$PATH\" }"'''
-init.depends-on = ["set-claude", "set-ccstatusline", "set-cc-env"]
+# set-cc-env = '''claude config set --global env "{\"PATH\": \"$PIXI_PROJECT_ROOT/node_modules/.bin:\$PATH\" }"'''
+init.depends-on = ["set-claude", "set-ccstatusline"]
+set-tweakcc = """jq -n --arg ccpath "$PIXI_PROJECT_ROOT/node_modules/@anthropic-ai/claude-code" '{ccInstallationDir: $ccpath}' > $HOME/.tweakcc/config.json"""
+build = """\
+rattler-build build -r . \
+--keep-build \
+--no-include-recipe \
+--no-build-id \
+--verbose
+"""
 
 [dependencies]
 pnpm = "*"
 
+[feature.dev.dependencies]
+rattler-build = "*"
+
 [activation.env]
 PATH = "$PIXI_PROJECT_ROOT/node_modules/.bin:$PATH"
+GOBIN = "$CONDA_PREFIX/bin"
+RATTLER_BUILD_LOG_STYLE = "plain"
+
+[environments]
+dev = { features = ["dev"] }

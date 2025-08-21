@@ -1,0 +1,34 @@
+context:
+  name: vape
+  build_number: 0
+
+package:
+  name: ${{ name }}
+  version: 0.1.0
+
+source:
+  - path: conf
+build:
+  number: ${{ build_number }}
+  script:
+    content:
+      - npm install -g --prefix $PREFIX @anthropic-ai/claude-code
+      - npm install -g --prefix $PREFIX ccstatusline@latest
+      - npm install -g --prefix $PREFIX ccusage@latest
+      # - cd $PREFIX/lib
+      #
+      # - tweakcc
+      - mv $PREFIX/bin/claude $PREFIX/bin/${{ name }}
+    # env:
+    #   PNPM_HOME: $PREFIX/bin
+
+requirements:
+  host:
+    - pnpm
+    - go
+    - jq
+  run:
+    - nodejs
+tests:
+  - script:
+      - ${{ name }} --help
