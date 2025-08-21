@@ -8,6 +8,8 @@ version = "0.1.0"
 [tasks]
 set-claude = "ln -sf $PIXI_PROJECT_ROOT/conf/.claude/settings.json ~/.claude/settings.json"
 set-ccstatusline = "ln -sf $PIXI_PROJECT_ROOT/conf/ccstatusline/settings.json ~/.config/ccstatusline/settings.json"
+install = "install.sh"
+uninstall = "pixi global uninstall vape-run"
 # set-cc-env = '''claude config set --global env "{\"PATH\": \"$PIXI_PROJECT_ROOT/node_modules/.bin:\$PATH\" }"'''
 init.depends-on = ["set-claude", "set-ccstatusline"]
 set-tweakcc = """jq -n --arg ccpath "$PIXI_PROJECT_ROOT/node_modules/@anthropic-ai/claude-code" '{ccInstallationDir: $ccpath}' > $HOME/.tweakcc/config.json"""

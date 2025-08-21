@@ -18,7 +18,7 @@ build:
       # - cd $PREFIX/lib
       #
       # - tweakcc
-      - mv $PREFIX/bin/claude $PREFIX/bin/${{ name }}
+      # - mv $PREFIX/bin/claude $PREFIX/bin/${{ name }}
     # env:
     #   PNPM_HOME: $PREFIX/bin
 
@@ -31,4 +31,4 @@ requirements:
     - nodejs
 tests:
   - script:
-      - ${{ name }} --help
+      - claude --help
