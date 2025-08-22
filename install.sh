@@ -7,3 +7,4 @@ npm install -g ccstatusline
 npm install -g ccusage
 
 ./mcp.sh
+python CCPlugins/install.py
