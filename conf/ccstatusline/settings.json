@@ -4,7 +4,7 @@
     [
       {
         "id": "8753f457-715b-46b0-8864-64bdd05ac65d",
-        "type": "version",
+        "type": "current-working-dir",
         "color": "cyan"
       },
       {
@@ -46,7 +46,7 @@
       },
       {
         "id": "4942ecb7-7015-4dc9-a975-8c04dd224696",
-        "type": "tokens-output"
+        "type": "tokens-total"
       },
       {
         "id": "dd5a86a2-9690-4d2f-b403-e893893206c1",
@@ -54,7 +54,7 @@
       },
       {
         "id": "36de979c-fa75-4a15-82f3-e731fef0449b",
-        "type": "tokens-total"
+        "type": "tokens-cached"
       },
       {
         "id": "2359258c-5898-4676-a86f-235f7a118478",
@@ -62,7 +62,7 @@
       },
       {
         "id": "3dfa562e-5a92-42b9-ab6a-557c291c36fd",
-        "type": "tokens-cached"
+        "type": "context-percentage"
       }
     ],
     [
