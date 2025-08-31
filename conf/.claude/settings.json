@@ -1,8 +1,33 @@
 {
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "ccstatusline",
     "padding": 0
   },
-  "model": "sonnet"
+  "permissions": {
+    "allow": [
+      "Bash(busted:*)",
+      "Bash(chmod:*)",
+      "Bash(cp:*)",
+      "Bash(env)",
+      "Bash(find:*)",
+      "Bash(gh:*)",
+      "Bash(git:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(pixi:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(rm:*)",
+      "Bash(sed:*)",
+      "mcp__codex__codex",
+      "mcp__context7__*",
+      "mcp__ide__*",
+      "mcp__serena__*"
+    ],
+    "deny": [],
+    "ask": []
+  }
 }

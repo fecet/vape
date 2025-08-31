@@ -22,7 +22,7 @@ rattler-build build -r . \
 """
 
 [dependencies]
-python = "3.10.*"
+python = "*"
 
 [feature.dev.dependencies]
 rattler-build = "*"
