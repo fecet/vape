@@ -7,6 +7,7 @@ npm install -g @anthropic-ai/claude-code
 npm install -g ccstatusline
 npm install -g ccusage
 npm install -g @openai/codex
+npm install -g repomix
 
 ./mcp.sh
 python CCPlugins/install.py
