@@ -29,10 +29,10 @@ def find_settings_files(root_dir: Path) -> List[Path]:
     # Use glob pattern to recursively find all settings.local.json files
     # **/.claude/settings.local.json will match at any depth
     settings_files = list(root_dir.glob("**/.claude/settings.local.json"))
-    
+
     # Sort for consistent output
     settings_files.sort()
-    
+
     return settings_files
 
 
@@ -85,12 +85,11 @@ def merge_permissions(settings_files: List[Path], root_dir: Path) -> Set[str]:
             except ValueError:
                 # If file is not under root_dir, show absolute path
                 display_path = file_path
-            
+
             print(f"  📄 Found {len(permissions)} permissions in: {display_path}")
             all_permissions.update(permissions)
 
     return all_permissions
-
 
 
 def update_settings_file(output_path: Path, permissions: Set[str]) -> None:
@@ -106,50 +105,63 @@ def update_settings_file(output_path: Path, permissions: Set[str]) -> None:
         # Check if the file exists and read existing content
         existing_settings = {}
         existing_allow = set()
-        
+
         if output_path.exists():
             try:
                 with open(output_path, "r", encoding="utf-8") as f:
                     content = f.read()
-                
+
                 # Try to parse JSON directly first
                 try:
                     existing_settings = json.loads(content)
                 except json.JSONDecodeError:
                     # If that fails, try to fix common issues like trailing commas
                     import re
+
                     # Remove trailing commas before ] or }
-                    fixed_content = re.sub(r',\s*([}\]])', r'\1', content)
+                    fixed_content = re.sub(r",\s*([}\]])", r"\1", content)
                     existing_settings = json.loads(fixed_content)
-                    print(f"⚠️  Fixed JSON formatting issues (trailing commas) in: {output_path}")
-                
+                    print(
+                        f"⚠️  Fixed JSON formatting issues (trailing commas) in: {output_path}"
+                    )
+
                 print(f"📖 Reading existing settings from: {output_path}")
-                
+
                 # Extract existing allow permissions
-                if "permissions" in existing_settings and "allow" in existing_settings["permissions"]:
+                if (
+                    "permissions" in existing_settings
+                    and "allow" in existing_settings["permissions"]
+                ):
                     existing_allow = set(existing_settings["permissions"]["allow"])
-                    print(f"  📋 Found {len(existing_allow)} existing allowed permissions")
-                    
+                    print(
+                        f"  📋 Found {len(existing_allow)} existing allowed permissions"
+                    )
+
             except (json.JSONDecodeError, Exception) as e:
-                print(f"⚠️  Warning: Could not parse existing file: {e}", file=sys.stderr)
-                print(f"  Will preserve other settings but reset permissions...", file=sys.stderr)
-        
+                print(
+                    f"⚠️  Warning: Could not parse existing file: {e}", file=sys.stderr
+                )
+                print(
+                    f"  Will preserve other settings but reset permissions...",
+                    file=sys.stderr,
+                )
+
         # Ensure permissions structure exists
         if "permissions" not in existing_settings:
             existing_settings["permissions"] = {}
-        
+
         # Merge existing and new permissions, removing duplicates
         merged_allow = existing_allow.union(permissions)
-        
+
         # Update the allow list with sorted permissions
         existing_settings["permissions"]["allow"] = sorted(list(merged_allow))
-        
+
         # Preserve deny and ask if they don't exist
         if "deny" not in existing_settings["permissions"]:
             existing_settings["permissions"]["deny"] = []
         if "ask" not in existing_settings["permissions"]:
             existing_settings["permissions"]["ask"] = []
-        
+
         # Write the updated settings
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(existing_settings, f, indent=2, ensure_ascii=False)
@@ -161,7 +173,7 @@ def update_settings_file(output_path: Path, permissions: Set[str]) -> None:
             print(f"\n🆕 Added {len(new_permissions)} new permissions")
         else:
             print(f"\n✔️  No new permissions to add (all already exist)")
-            
+
         print(f"✅ Successfully updated settings in: {output_path}")
         print(f"   Total unique permissions: {len(merged_allow)}")
 
@@ -247,4 +259,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

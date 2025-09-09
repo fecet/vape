@@ -2,12 +2,9 @@
 
 pixi global install pnpm
 pixi global install uv
-npm install -g bun
-npm install -g @anthropic-ai/claude-code
-npm install -g ccstatusline
-npm install -g ccusage
-npm install -g @openai/codex
-npm install -g repomix
-
-./mcp.sh
-python CCPlugins/install.py
+pnpm install -g bun
+pnpm install -g @anthropic-ai/claude-code
+pnpm install -g ccstatusline
+pnpm install -g ccusage
+pnpm install -g @openai/codex
+pnpm install -g repomix
